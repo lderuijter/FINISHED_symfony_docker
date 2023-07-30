@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block body %}
+
+    <div>Your email: {{ app.user.email }}</div>
+
+    <div>Your role(s):</div>
+    {% for roles in app.user.roles %}
+        <div>{{ roles }}</div>
+    {% endfor %}
+    <button type="button" class="btn btn-light" style="border: solid 2px black">
+        <a style="text-decoration: none; color: black" href="{{ path('app_edit_user') }}">Edit user</a>
+    </button>
+
+{% endblock %}
